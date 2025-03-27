@@ -1,14 +1,24 @@
 // Xử lý scrolling mượt mà khi nhấp vào các liên kết
 document.addEventListener("DOMContentLoaded", function () {
-  // Menu và menu toggle
-  const navMenu = document.querySelector(".nav-menu");
+  // Xác định các phần tử DOM
   const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
 
-  // Thêm event listener cho nút menu
+  // Kiểm tra phần tử tồn tại
+  if (!menuToggle || !navMenu) {
+    console.error("Không tìm thấy menu-toggle hoặc nav-menu");
+    return;
+  }
+
+  // Xử lý menu toggle
   menuToggle.addEventListener("click", function (e) {
-    e.stopPropagation(); // Ngăn sự kiện lan truyền đến document
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Toggle class show
     navMenu.classList.toggle("show");
-    // Đổi biểu tượng menu khi click
+
+    // Đổi biểu tượng
     if (navMenu.classList.contains("show")) {
       menuToggle.innerHTML = '<i class="fas fa-times"></i>';
     } else {

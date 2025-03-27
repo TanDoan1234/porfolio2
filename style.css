@@ -103,7 +103,7 @@ ul {
 
 /* Menu mặc định ẩn */
 .nav-menu {
-  display: none;
+  display: none; /* Đảm bảo menu mặc định ẩn */
   position: fixed;
   top: 60px;
   left: 0;
@@ -118,7 +118,7 @@ ul {
 }
 
 .nav-menu.show {
-  display: flex;
+  display: flex; /* Khi có class show thì hiện menu */
 }
 
 .nav-menu li {
@@ -1158,6 +1158,22 @@ ul {
 
   .navbar ul li {
     margin: 0.5rem 0.7rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Ẩn nút toggle trên desktop */
+  }
+
+  .nav-menu {
+    display: flex; /* Luôn hiển thị menu trên desktop */
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
   }
 }
 
