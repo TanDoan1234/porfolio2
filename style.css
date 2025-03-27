@@ -1062,6 +1062,22 @@ ul {
   }
 }
 
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Ẩn nút toggle trên desktop */
+  }
+
+  .nav-menu {
+    display: flex; /* Luôn hiển thị menu trên desktop */
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+  }
+}
+
 @media (max-width: 576px) {
   .header {
     height: 70vh;
@@ -1158,22 +1174,6 @@ ul {
 
   .navbar ul li {
     margin: 0.5rem 0.7rem;
-  }
-}
-
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none; /* Ẩn nút toggle trên desktop */
-  }
-
-  .nav-menu {
-    display: flex; /* Luôn hiển thị menu trên desktop */
-    position: static;
-    flex-direction: row;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    width: auto;
   }
 }
 
@@ -1319,5 +1319,15 @@ ul {
     top: 0.8rem;
     right: 1rem;
     font-size: 1.3rem;
+  }
+}
+/* Thêm vào cuối file CSS */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none !important;
+  }
+
+  .nav-menu.show {
+    display: flex !important;
   }
 }
