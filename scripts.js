@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Thêm hiệu ứng reveal khi scroll cho các section
   const revealElements = document.querySelectorAll(
-    ".about, .education, .skills, .projects, .social, .contact"
+    ".about, .education, .skills, .soft-skills, .projects, .social, .contact"
   );
 
   function checkReveal() {
